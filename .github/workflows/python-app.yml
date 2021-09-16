@@ -23,6 +23,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        export FLASK_APP=web
-        flask run &
+        gunicorn web:app --daemon
         pytest
