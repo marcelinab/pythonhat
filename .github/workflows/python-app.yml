@@ -23,5 +23,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        gunicorn web:app --daemon
+        gunicorn web:app --bind=127.0.0.1:5000 --daemon
         pytest
