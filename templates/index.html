@@ -1,7 +1,19 @@
 <!doctype html>
-<title>Hello from Flask</title>
-{% if name %}
-  <h1>Hello {{ name }}!</h1>
-{% else %}
-  <h1>Hello, World!</h1>
-{% endif %}
+<html>
+<head>
+  <title>Hello from Flask</title>
+</head>
+<body>
+<h1>Hello {{ date }}!</h1>
+{% for comment in comments %}
+    <li>{{ comment }}</li>
+{% endfor %}
+
+<form method="post" action="/add-comment">
+  <label for="comment">comment:</label><br>
+  <input type="text" id="comment" name="comment">
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
